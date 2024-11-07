@@ -14,7 +14,7 @@ public class Doctor {
     private DoctorsSpecialization doctorsSpecialization;
 
     public BigDecimal toTreat() {
-        log.info("{} вылечил человека", doctorsSpecialization);
+        log.info("{} вылечил человека", doctorsSpecialization.getName());
         return costOfDoctorsAppointment;
     }
 }
