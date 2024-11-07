@@ -1,4 +1,4 @@
-package com.javaacademy.polyclinic;
+package com.javaacademy.polyclinic.doctor;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

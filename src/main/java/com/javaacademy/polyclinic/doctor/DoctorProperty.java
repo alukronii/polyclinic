@@ -1,4 +1,4 @@
-package com.javaacademy.polyclinic;
+package com.javaacademy.polyclinic.doctor;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;

@@ -1,4 +1,4 @@
-package com.javaacademy.polyclinic;
+package com.javaacademy.polyclinic.doctor;
 
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;

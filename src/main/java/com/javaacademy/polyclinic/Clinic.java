@@ -1,5 +1,6 @@
 package com.javaacademy.polyclinic;
 
+import com.javaacademy.polyclinic.doctor.Doctor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
