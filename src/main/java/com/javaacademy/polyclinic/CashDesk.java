@@ -7,14 +7,12 @@ import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 
-import static java.math.BigDecimal.ZERO;
-
+@Component
 @Data
 @AllArgsConstructor
 @Slf4j
-@Component
 public class CashDesk {
-    private BigDecimal fullIncome = ZERO;
+    private BigDecimal fullIncome;
 
     public void takePayment(BigDecimal income) {
         fullIncome = fullIncome.add(income);

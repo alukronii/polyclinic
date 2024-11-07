@@ -5,8 +5,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import java.math.BigDecimal;
 
-@Data
 @ConfigurationProperties(prefix = "cost")
+@Data
 public class DoctorProperty {
     private BigDecimal therapist;
     private BigDecimal dentist;
