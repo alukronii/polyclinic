@@ -10,6 +10,9 @@ import org.springframework.context.annotation.Configuration;
 public class DoctorConfiguration {
     private DoctorProperty doctorProperty;
 
+    public DoctorConfiguration(DoctorProperty doctorProperty) {
+        this.doctorProperty = doctorProperty;
+    }
 
     @Bean
     public Doctor juniorSurgeon() {
