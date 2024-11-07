@@ -1,0 +1,5 @@
+doctor:
+  therapist: 500
+  dentist: 1500
+  junior-surgeon: 700
+  senior-surgeon: 2000
