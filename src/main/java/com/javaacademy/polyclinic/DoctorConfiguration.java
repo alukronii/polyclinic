@@ -33,5 +33,4 @@ public class DoctorConfiguration {
         return new Doctor(doctorProperty.getDentist(),
             DoctorsSpecialization.DENTIST);
     }
-
 }
