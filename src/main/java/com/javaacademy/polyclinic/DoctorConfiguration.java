@@ -1,35 +1,37 @@
 package com.javaacademy.polyclinic;
 
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.math.BigDecimal;
-
 
 @Configuration
-public class ClinicConfiguration {
+@EnableConfigurationProperties(value = DoctorProperty.class)
+public class DoctorConfiguration {
+    private DoctorProperty doctorProperty;
+
 
     @Bean
     public Doctor juniorSurgeon() {
-        return new Doctor(BigDecimal.valueOf(700),
+        return new Doctor(doctorProperty.getJuniorSurgeon(),
             DoctorsSpecialization.SURGEON);
     }
 
     @Bean
     public Doctor seniorSurgeon() {
-        return new Doctor(BigDecimal.valueOf(2000),
+        return new Doctor(doctorProperty.getSeniorSurgeon(),
             DoctorsSpecialization.SURGEON);
     }
 
     @Bean
     public Doctor therapist() {
-        return new Doctor(BigDecimal.valueOf(500),
+        return new Doctor(doctorProperty.getTherapist(),
             DoctorsSpecialization.THERAPIST);
     }
 
     @Bean
     public Doctor dentist() {
-        return new Doctor(BigDecimal.valueOf(1500),
+        return new Doctor(doctorProperty.getDentist(),
             DoctorsSpecialization.DENTIST);
     }
 

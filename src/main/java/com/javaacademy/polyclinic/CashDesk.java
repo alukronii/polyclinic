@@ -17,10 +17,10 @@ public class CashDesk {
     private BigDecimal income = ZERO;
 
     public void takePayment(Doctor doctor) {
-        income = this.income.add(doctor.getCostOfDoctorsAppointment());
+        income = income.add(doctor.getCostOfDoctorsAppointment());
     }
 
     public void infoIncome() {
-        log.info(String.valueOf(getIncome()));
+        log.info("Заработала поликлиника: {}", income);
     }
 }

@@ -14,7 +14,7 @@ public class PolyclinicApplication {
 		clinic.toTreatDentist();
 		clinic.toTreatJuniorSurgeon();
 		clinic.toTreatSeniorSurgeon();
-		CashDesk cashDesk = context.getBean(CashDesk.class);
-		cashDesk.infoIncome();
+//		CashDesk cashDesk = context.getBean(CashDesk.class);
+//		cashDesk.infoIncome();
 	}
 }

@@ -1,32 +1,42 @@
 package com.javaacademy.polyclinic;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 @Component
 public class Clinic {
-    private CashDesk income;
+    private CashDesk cashDesk;
     private Doctor therapist;
     private Doctor dentist;
     private Doctor juniorSurgeon;
     private Doctor seniorSurgeon;
 
-    public void toTreatTherapist(Doctor therapist) {
+    public Clinic(@Qualifier("therapist") Doctor therapist, @Qualifier("dentist") Doctor dentist, @Qualifier("juniorSurgeon") Doctor juniorSurgeon, @Qualifier("seniorSurgeon") Doctor seniorSurgeon) {
+        this.therapist = therapist;
+        this.dentist = dentist;
+        this.juniorSurgeon = juniorSurgeon;
+        this.seniorSurgeon = juniorSurgeon;
+    }
+
+    public void toTreatTherapist() {
         therapist.toTreat();
-        income.takePayment(therapist);
+        cashDesk.takePayment(therapist);
     }
 
-    public void toTreatDentist(Doctor dentist) {
+    public void toTreatDentist() {
         dentist.toTreat();
-        income.takePayment(dentist);
+        cashDesk.takePayment(dentist);
     }
 
-    public void toTreatJuniorSurgeon(Doctor juniorSurgeon) {
+    public void toTreatJuniorSurgeon() {
         juniorSurgeon.toTreat();
-        income.takePayment(juniorSurgeon);
+        cashDesk.takePayment(juniorSurgeon);
     }
 
-    public void toTreatSeniorSurgeon(Doctor seniorSurgeon) {
+    public void toTreatSeniorSurgeon() {
         seniorSurgeon.toTreat();
-        income.takePayment(seniorSurgeon);
+        cashDesk.takePayment(seniorSurgeon);
     }
 }
