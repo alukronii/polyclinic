@@ -14,13 +14,13 @@ import static java.math.BigDecimal.ZERO;
 @Slf4j
 @Component
 public class CashDesk {
-    private BigDecimal income = ZERO;
+    private BigDecimal fullIncome = ZERO;
 
-    public void takePayment(Doctor doctor) {
-        income = income.add(doctor.getCostOfDoctorsAppointment());
+    public void takePayment(BigDecimal income) {
+        fullIncome = fullIncome.add(income);
     }
 
     public void infoIncome() {
-        log.info("Заработала поликлиника: {}", income);
+        log.info("Заработала поликлиника: {}", fullIncome);
     }
 }

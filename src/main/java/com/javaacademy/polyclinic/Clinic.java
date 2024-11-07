@@ -3,8 +3,6 @@ package com.javaacademy.polyclinic;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
 @Component
 public class Clinic {
     private CashDesk cashDesk;
@@ -13,30 +11,29 @@ public class Clinic {
     private Doctor juniorSurgeon;
     private Doctor seniorSurgeon;
 
-    public Clinic(@Qualifier("therapist") Doctor therapist, @Qualifier("dentist") Doctor dentist, @Qualifier("juniorSurgeon") Doctor juniorSurgeon, @Qualifier("seniorSurgeon") Doctor seniorSurgeon) {
+    public Clinic(@Qualifier("therapist") Doctor therapist,
+                  @Qualifier("dentist") Doctor dentist,
+                  @Qualifier("juniorSurgeon") Doctor juniorSurgeon,
+                  @Qualifier("seniorSurgeon") Doctor seniorSurgeon) {
         this.therapist = therapist;
         this.dentist = dentist;
         this.juniorSurgeon = juniorSurgeon;
-        this.seniorSurgeon = juniorSurgeon;
+        this.seniorSurgeon = seniorSurgeon;
     }
 
     public void toTreatTherapist() {
-        therapist.toTreat();
-        cashDesk.takePayment(therapist);
+        cashDesk.takePayment(therapist.toTreat());
     }
 
     public void toTreatDentist() {
-        dentist.toTreat();
-        cashDesk.takePayment(dentist);
+        cashDesk.takePayment(dentist.toTreat());
     }
 
     public void toTreatJuniorSurgeon() {
-        juniorSurgeon.toTreat();
-        cashDesk.takePayment(juniorSurgeon);
+        cashDesk.takePayment(juniorSurgeon.toTreat());
     }
 
     public void toTreatSeniorSurgeon() {
-        seniorSurgeon.toTreat();
-        cashDesk.takePayment(seniorSurgeon);
+        cashDesk.takePayment(seniorSurgeon.toTreat());
     }
 }
