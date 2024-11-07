@@ -12,10 +12,12 @@ public class Clinic {
     private Doctor juniorSurgeon;
     private Doctor seniorSurgeon;
 
-    public Clinic(@Qualifier("therapist") Doctor therapist,
+    public Clinic(CashDesk cashDesk,
+                  @Qualifier("therapist") Doctor therapist,
                   @Qualifier("dentist") Doctor dentist,
                   @Qualifier("juniorSurgeon") Doctor juniorSurgeon,
                   @Qualifier("seniorSurgeon") Doctor seniorSurgeon) {
+        this.cashDesk = cashDesk;
         this.therapist = therapist;
         this.dentist = dentist;
         this.juniorSurgeon = juniorSurgeon;
